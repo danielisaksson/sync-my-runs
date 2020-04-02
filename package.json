@@ -1,0 +1,19 @@
+{
+  "name": "sync-my-runs",
+  "version": "1.0.0",
+  "description": "Convert exported Nike plus activities from JSOn to GPX format",
+  "main": "index.js",
+  "scripts": {
+    "sync": "node index.js --config ./config.json --output ./exports",
+    "download": "node index.js --config ./config.json --output ./exports --no-upload",
+    "sync-all": "node index.js --config ./config.json --output ./exports --date 0 --no-upload",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "commander": "^5.0.0",
+    "form-data": "^3.0.0"
+  }
+}
