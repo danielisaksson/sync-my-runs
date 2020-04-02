@@ -3,11 +3,9 @@
 This documentation is based on the work of
 [Yoshimasa Niwa - fetch_nike_puls_all_activities.bash](https://gist.github.com/niw/858c1ecaef89858893681e46db63db66) with some edits to how the Bearer token is retrieved.
 
-NikePlus hosted many my past run metrics however, they don't provide a way to export them for the customers and yet their API seems open to their partner which sounds kind of evil.
+Since NikePlus and the Nike NRC app don't provide an export functionality (except for some payed partner solutions) I think they actually break the GDPR laws in Europe. But if you manage to get access to the API used by their app there is a simple HTTP/JSON API and you can fetch all metrics from their website.
 
-Anyways, because of that, there is definitely a simple HTTP/JSON API and we can fetch all metrics from their website.
-
-To acquire the access, the API is using OAuth 2.0, thus need to get an access token, which is not easy by using normal OAuth authorization steps because we can't create client ID for their API. However, `nike.com` and their website itself is using same API and it's really easy to get own access token from the response.
+To acquire the access, the API is using OAuth 2.0, thus need to get an access token, which is not easy by using normal OAuth authorization steps because we can't create client ID for their API. However, `nike.com` and their website itself is using same API and it's really easy to get your own access token from the response.
 
 Go to the [Nike website](https://www.nike.com) and open the Chrome dev tools. Filter Network requests on XHR to unite.nike.com/login.
 
