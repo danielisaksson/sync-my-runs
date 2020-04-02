@@ -12,6 +12,31 @@ The project is using the Nike API. Read about how it's used [here](nike_plus_api
 $ npm install # Or yarn install
 ```
 
+### Setup untracked files and folders
+
+Add an `exports` folder in the project. This folder will contain your exported `GPX` files and will not be tracked by Git.
+
+Add an `config.json` file in the project. Update this file with your own credentials.
+
+```json
+{
+    "nike": {
+        "user_id": "YOUR USER ID",
+        "client_id": "YOUR CLIENT ID",
+        "access_token": "YOUR ACCESS TOKEN",
+        "refresh_token": "YOUR REFRESH TOKEN",
+        "expires_at": 1585813777563
+    },
+    "strava": {
+        "client_id": "YOUR CLIENT ID",
+        "client_secret": "YOUR CLIENT SECRET",
+        "access_token": "YOUR ACCESS TOKEN",
+        "refresh_token": "YOUR REFRESH TOKEN",
+        "expires_at": 1585831778000
+    }
+}
+```
+
 ---
 
 
