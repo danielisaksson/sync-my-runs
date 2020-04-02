@@ -183,7 +183,8 @@ async function init() {
                     }
 
                     if (output && commander.upload) {
-                        await uploadToStrava(filename)
+                        let activityname = res.tags['com.nike.name'] || ''
+                        await uploadToStrava(filename, activityname, res.id)
                     }
                 }
             } else {
@@ -376,7 +377,7 @@ function generateGPXOutput(activity) {
     return output
 }
 
-async function uploadToStrava(filename) {
+async function uploadToStrava(filename, activityname, id) {
     let fileFormData = new FormData()
     fileFormData.append('file', fs.createReadStream(`${outputPath}/${filename}.gpx`), {
         filename: `${filename}.gpx`
