@@ -16,7 +16,7 @@ $ npm install # Or yarn install
 
 Add an `exports` folder in the project. This folder will contain your exported `GPX` files and will not be tracked by Git.
 
-Add an `config.json` file in the project. Update this file with your own credentials.
+Add an `config.json` file in the project. Update this file with your own credentials. This file is not tracked on Git either.
 
 ```json
 {
@@ -184,8 +184,9 @@ Depending on the options the script will do the following when syncing:
 2. Check if the Nike `access_token` needs to be refreshed by comparing the `expires_at` timestamp with the current time.
 3. If the token has expired a new token is generated using the `refresh_token` and the `config` JSON file is updated with the new tokens and timestamp.
 4. Same process is repeated for Strava.
-5. The last activity is fetched from Strava
-6. All activities more recent than the latest activity on Strava are fetched from Nike.
-7. The Nike activities are converted to `GPX` format and saved to the `exports` folder
-8. All new activities are uploaded to Strava
-9. Done!
+5. The last activity is fetched from Strava if no `--date` option is used
+6. All activities more recent than the latest activity on Strava or the `-date` timestamp are fetched from Nike.
+7. Manual entries in Nike NRC doesn't contain any metrics and can't be fetched.
+8. The Nike activities are converted to `GPX` format and saved to the `exports` folder.
+9. All new activities are uploaded to Strava unless the `--no-upload` flag is used
+10. Done!
