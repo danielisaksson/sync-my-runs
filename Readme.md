@@ -2,7 +2,7 @@
 # SyncMyRuns
 
 This project helps me with syncing runs from Nike plus (NRC) app to Strava.
-The project is using the Nike API. Read about how it's used [here](nike_plus_api.md)
+The project is using the Nike API. Read about how to access the Nike API [here](nike_plus_api.md)
 
 
 ## Build Setup
