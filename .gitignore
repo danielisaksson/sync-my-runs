@@ -43,7 +43,7 @@ sw.*
 ### Project specific
 
 # Config file
-# /config.json
+/config.json
 
 # Exports and Activities
-# /exports
+/exports
